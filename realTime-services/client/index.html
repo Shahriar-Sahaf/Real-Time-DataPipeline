@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texona</title>
+    <style>
+        table, th, td {border: 1px solid black; }
+    </style>
+</head>
+<body>
+
+
+    <table style="width:100%" >
+        <thead>
+            <tr>
+                <th>
+                    <p>value</p>
+                </th>
+                <th>
+                    <p>tempreture</p>
+                </th>
+                <th>
+                    <p>humidity</p>
+                </th>
+                <th>
+                    <p>time</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <p id="value"></p>
+                </td>
+                <td>
+                    <p id="tempreture"></p>
+                </td>
+                <td>
+                    <p id="humidity"></p>
+
+                </td>
+                <td>
+                    <p id="time"></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+
+const value = document.getElementById('value');
+const temperature= document.getElementById('tempreture');
+const humidity =document.getElementById('humidity');
+const time =document.getElementById('time');
+
+socket.on('emitData', (msg) => {
+  try {
+    
+    if (typeof msg === 'string') {
+      msg = JSON.parse(msg);
+    }
+    value.textContent = msg.value || '---';
+    temperature.textContent = msg.tempreture || '---';
+    humidity.textContent = msg.humidity || '---';
+    time.textContent = msg.time || '---';
+
+    console.log('Data received and updated in table:', msg);
+
+  } catch (error) {
+    console.error('Error parsing message:', error);
+  }
+});
+</script>
+</body>
+</html>
