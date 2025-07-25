@@ -29,15 +29,11 @@ This project uses the following this  npm packages:
 - **jest** – Testing framework
 - **supertest** – For testing HTTP APIs
 
-Install all dependencies via:
-```bash
-npm install
-```
 ## 🚀 Service Setup & Run Instructions
 
 ### 1. API Gateway Service
 
-#### 🔧 Installation
+####  Installation
 ```bash
 npm install
 ```
@@ -74,23 +70,23 @@ https://www.docker.com/products/docker-desktop/
 
 3. Ensure integration with WSL2 is enabled in Docker settings.
 
-## 🐳Install Redis
-
+## Install Redis
+```bash
 docker run -d --texonaRedis redis -p 6379:6379 redis
-Test with:
-docker exec -it redis redis-cli OR 
+Test with: 
 docker ps 
+```
 
 MongoDB  & Robo3t
 1. Download from: https://www.mongodb.com/try/download/community  
 2. Start mongod and connect to mongodb://localhost:27017
-3.Download Robo3T : https://robomongo.org/download.php
+3. Download Robo3T : https://robomongo.org/download.php
 
-## 🛢️ Install PostgreSQL and DBeaver
+##  Install PostgreSQL and DBeaver
 
 PostgreSQL  
 1. Download: https://www.postgresql.org/download/windows/  
-2.Download DBeaver:https://dbeaver.io/download/
+2. Download DBeaver:https://dbeaver.io/download/
 
 #### 🛠️ Start Service
 
@@ -113,12 +109,13 @@ This service receives cached messages from Redis and sends them WebSocket to con
 #### 🛠️ Start Service
 
 ```bash
-node socketServer.js
+cd realTime-services
+nodemon index.js
 ```
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 Each service can have a `__test__` folder.
 
