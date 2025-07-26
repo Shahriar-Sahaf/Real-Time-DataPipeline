@@ -1,4 +1,4 @@
-require('dotenv').config({path: require('path').resolve(__dirname, '../.env') });
+require('dotenv').config({path: require('path').resolve(__dirname, '../../.env') });
 const redis = require('redis')
 
 const redisClient = redis.createClient(); 

@@ -1,9 +1,12 @@
-require('dotenv').config({path: require('path').resolve(__dirname, '../.env') });
+
+require('dotenv').config({path: require('path').resolve(__dirname, '../../.env') });
+
 const mongoose = require('mongoose');
 const Data = require('./Model')
 
 const connectMongoDB = async ()=>{
     try {
+
 
         await mongoose.connect(process.env.MONGO_URL)
 
