@@ -117,10 +117,9 @@ nodemon index.js
 
 ---
 
-##  Running Tests
+## Running Tests
 
-Each service can have a `__test__` folder.
-
+have Unit test for worker-services and Integration test for api :
 To run tests:
 
 ```bash
