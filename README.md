@@ -128,7 +128,7 @@ npm test
 ```
 ## Flow Overview
 
-1. **Client** sends data to `/api/events` with HTTP POST.
+1. **Server** sends data to `/api/events` with HTTP POST.
 2. **API Gateway** queues it to RabbitMQ.
 3. **Consumer Service** consumes it:
    - Stores all data in **MongoDB**
