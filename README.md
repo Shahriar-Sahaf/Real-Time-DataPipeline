@@ -1,7 +1,6 @@
 # 🌐 Real-Time Data Pipeline Microservices system 
 
-This is a processing pipeline project that is developed using the microservice architecture, receives the messages through the API in the first service and puts it in a rabbitmq queue, the second service reads the messages by listening to the queue and and first saves the name of the device in the PostgreSQL database and then the entire message in the MongoodB database, then the data is cached in Redis and the values cached simultaneously with the PUB / SUB algorithm by Redis. They are pulled, then the work of the third service starts and this service receives the message with the subscribe and is displayed to the user in realtime with the WebSocket algorithm with the socket.io library.
-
+This is a processing pipeline project developed using a microservices architecture. The first service receives messages through an API and places them into a RabbitMQ queue. The second service listens to this queue, first saves the device name into a PostgreSQL database, and then stores the entire message in MongoDB. After that, the data is cached in Redis. Using Redis Pub/Sub, the cached values are published. The third service subscribes to this channel, receives the messages in real-time, and delivers them to the users through WebSocket using the Socket.IO library.
 ---
 
 ## Tech Stack
@@ -35,6 +34,7 @@ This project uses the following this  npm packages:
 
 ####  Installation
 ```bash
+cd texonaProject
 npm install
 ```
 ## 🐇 Install RabbitMQ (Windows without Docker)
