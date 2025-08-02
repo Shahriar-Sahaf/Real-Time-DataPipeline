@@ -26,4 +26,4 @@ app.listen(PORT,()=>{
 
 
 
-module.exports = { app, startServer };
+module.exports = {  startServer };

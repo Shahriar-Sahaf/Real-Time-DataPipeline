@@ -32,7 +32,7 @@ const createPostgresqlTable = async ()=>{
 
 const createSensors = async(data)=>{
     if (!data.value) {
-         console.log('all fields Are required !')
+        console.log('all fields Are required !')
     }
 
     const query = `INSERT INTO data (value) VALUES ($1)`;

@@ -2,7 +2,7 @@
 require('dotenv').config({path: require('path').resolve(__dirname, '../.env') });
 
 
-const {exportChannel,rabbitmqConnected} = require('../apiGateway-services/rabbitMQ/config')
+const {rabbitmqConnected,exportChannel} = require('./DB/rabbitMQ/config')
 const {connectMongoDB,createData} = require('./DB/MongooDB/mongoose')
 const {createPostgresqlTable,createSensors} = require('./DB/Postgresql/pg')
 const {redisCache,connectedRedis} =require('./DB/Redis/configRedis')

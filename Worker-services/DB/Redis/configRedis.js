@@ -1,7 +1,9 @@
 require('dotenv').config({path: require('path').resolve(__dirname, '../../.env') });
 const redis = require('redis')
 
-const redisClient = redis.createClient(); 
+const redisClient = redis.createClient({
+    url:process.env.REDIS_URL
+}); 
 
 async function connectedRedis(){
 

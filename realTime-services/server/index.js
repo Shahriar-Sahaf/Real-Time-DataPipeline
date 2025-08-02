@@ -15,8 +15,11 @@ const PORT = process.env.PORT
 const clinetDirectory = path.join(__dirname,'../client')
 app.use(express.static(clinetDirectory))
 
-const client = redis.createClient()
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
 
+const client = redis.createClient({
+    url:process.env.REDIS_URL
+})
 client.connect()
 
 async function subscribe() {
@@ -36,7 +39,6 @@ async function subscribe() {
     }
 
 }
-
 
 
 io.on('connection',(socket)=>{

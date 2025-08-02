@@ -20,7 +20,7 @@ describe('TEST /api/events', () => {
     device: 'test-sensor',
     temperature: 22,
     humidity :30,
-    time: new Date().toISOString()
+    time: '15'
   }
   const res = await request(app).post('/api/events').send(testData);
   expect(res.status).toBe(200);

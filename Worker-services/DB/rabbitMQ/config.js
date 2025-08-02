@@ -1,4 +1,4 @@
-require('dotenv').config({ path: require('path').resolve(__dirname, '../.env') });
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') });
 
 const amqp = require('amqplib');
 
@@ -22,7 +22,6 @@ async function rabbitmqConnected() {
 
     } catch (error) {
         console.log('Error for RabbitMQ :',error);
-        process.exit(1);
     }
     
 }
