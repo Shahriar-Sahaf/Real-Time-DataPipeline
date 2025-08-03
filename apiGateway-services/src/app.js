@@ -6,7 +6,7 @@ const { rabbitmqConnected }=require('../rabbitMQ/config');
 const {publish} = require('../rabbitMQ/publish');
 
 const PORT = process.env.PORT;
-
+ 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

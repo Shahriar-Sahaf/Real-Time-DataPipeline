@@ -31,7 +31,26 @@ This project uses the following this  npm packages:
 - **supertest** – For testing HTTP APIs
 
 ## 🚀 Service Setup & Run Instructions
+  
 
+## 🚨 Environment Setup
+
+Create `.env` files inside each service directory  before running Docker.
+
+
+# 🐳 Run with Docker
+- To Start all containers
+```bash
+cd root
+docker-compose up --build
+```
+
+- To stop all running containers:
+
+```bash
+docker-compose down
+```
+# Run Without Docker
 ### 1. API Gateway Service
 
 ####  Installation
